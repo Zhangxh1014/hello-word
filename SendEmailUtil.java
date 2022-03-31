@@ -64,9 +64,9 @@ public class SendEmailUtil {
 
     public static MimeMessage createMimeMessage(Session session, String sendMail, String receiveMail, String text) throws UnsupportedEncodingException, MessagingException {
         MimeMessage message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(sendMail, "C30在线", "UTF-8"));
+        message.setFrom(new InternetAddress(sendMail, "发送人名称", "UTF-8"));
         message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail, "", "UTF-8"));
-        message.setSubject("邮箱验证", "UTF-8");
+        message.setSubject("功能提示语", "UTF-8");
         message.setContent(text, "text/html;charset=UTF-8");
         message.setSentDate(new Date());
         message.saveChanges();
